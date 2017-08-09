@@ -1,0 +1,24 @@
+{
+  "name": "chatter",
+  "version": "1.0.0",
+  "description": "A chat app using node.js and webScokets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spark97/chatApp.git"
+  },
+  "author": "Harshit Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spark97/chatApp/issues"
+  },
+  "homepage": "https://github.com/spark97/chatApp#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "socket.io": "^2.0.3"
+  }
+}
