@@ -10,7 +10,12 @@ app.get('/',function(req,res){
 
 io.on('connection',function(socket){
     console.log("Client connected");
-})
+    socket.emit("welcome","Welcome Aboard");
+    socket.on("msg",function(data){
+        console.log("Msg: "+data);
+        socket.broadcast.emit('recvMsg',data);
+    });
+});
 
 server.listen(3000,function(){
     console.log("server running on port 3000");
