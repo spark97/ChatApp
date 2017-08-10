@@ -22,18 +22,25 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
         $(function () {
+          var name = prompt("Enter your username");
+          console.log(name);
     var socket = io();
     $('form').submit(function(){
-      socket.emit('msg', $('#m').val());
+      var data = {"name":name,"msg":$('#m').val()};
+      console.log(data);
+      socket.emit('msg', data);
+      $('#messages').append("<b>"+name+"</b>:"+data.msg+"<br><hr>");
       $('#m').val('');
       return false;
     });
     socket.on("welcome",function(data){
             alert(data);
+            return false;
         });
     socket.on("recvMsg",function(data){
         console.log(data);
-        $('#messages').append(data+"<br>");
+         $('#messages').append("<b>"+data.name+"</b>:"+data.msg+"<br><hr>");
+         return false;
     });
   });
     </script>
